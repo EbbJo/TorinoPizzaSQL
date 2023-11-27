@@ -1,9 +1,10 @@
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 24. 11 2023 kl. 09:23:48
+-- Genereringstid: 27. 11 2023 kl. 10:22:12
 -- Serverversion: 10.4.28-MariaDB
 -- PHP-version: 8.2.4
 
@@ -69,11 +70,11 @@ CREATE TABLE `kundeinfo` (
 --
 
 INSERT INTO `kundeinfo` (`KundeNr`, `KundeNavn`, `Email`, `TelefonNr`, `Leveringsaddresse`) VALUES
-(1, 'Hans Iversen', 'hi@hi.hi', 12344321, 'Ivervej 1'),
-(2, 'Bobfrederik Frederiksen', 'place@holder.com', 43211234, 'Margrethevej 14'),
-(3, 'Syntaksfejl Nordmand', 'sy@fa.no', 91919191, 'Butiksvej 3'),
-(4, 'Lorem Ipsum', 'dolor@fakenews.com', 80081335, 'Silikonevej 3'),
-(5, 'Karl Emil', 'KajJohan@flop.mail', 10000001, 'Larstyndskidsmark 8');
+(1, 'Hans Iversen', 'hi@hi.hi', 12344321, 'Ivervej 1, 7400'),
+(2, 'Bobfrederik Frederiksen', 'place@holder.com', 43211234, 'Margrethevej 14, 7650'),
+(3, 'Syntaksfejl Nordmand', 'sy@fa.no', 91919191, 'Butiksvej 3, 7430'),
+(4, 'Lorem Ipsum', 'dolor@fakenews.com', 80081335, 'Silikonevej 3, 6971'),
+(5, 'Karl Emil', 'KajJohan@flop.mail', 10000001, 'Larstyndskidsmark 8, 7323');
 
 -- --------------------------------------------------------
 
@@ -120,6 +121,13 @@ CREATE TABLE `regning` (
   `KundeNr` int(4) NOT NULL,
   `SamletPris` double DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Data dump for tabellen `regning`
+--
+
+INSERT INTO `regning` (`RegningNr`, `KundeNr`, `SamletPris`) VALUES
+(1, 5, 164.98);
 
 --
 -- Begrænsninger for dumpede tabeller
@@ -172,7 +180,7 @@ ALTER TABLE `kundeinfo`
 -- Tilføj AUTO_INCREMENT i tabel `regning`
 --
 ALTER TABLE `regning`
-  MODIFY `RegningNr` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `RegningNr` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Begrænsninger for dumpede tabeller
